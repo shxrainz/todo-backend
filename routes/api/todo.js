@@ -48,6 +48,22 @@ router.put('/item/:id', async (req, res) => {
     })
 });
 
+//Update Completed Todo
+router.put('/item/completed/:id', async (req, res) => {
+    const id = parseInt(req.params.id)
+    await pool.query(queries.getTodoById, [id], (error, results) => {
+        const noTodoFound = !results.rows.length;
+        if(noTodoFound){
+            res.json({ msg: `Todo item does not exist in the database` })
+        }
+
+        pool.query(queries.updateCompletedTodo, [id], (error, results) => {
+            if (error) throw error;
+            res.status(200).json({ msg: "Todo item updated as completed!" })
+        })
+    })
+});
+
 //Delete Todo Item
 router.delete('/item/:id', async (req, res) => {
     const id = parseInt(req.params.id)
