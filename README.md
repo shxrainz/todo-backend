@@ -1,5 +1,5 @@
 # todo-backend
-Backend for simple-todo-app
+Backend for simple-todo-app using NodeJS,Express and PostgreSQL
 
 # Install dependencies
 npm install
@@ -8,4 +8,4 @@ npm install
 npm run dev
 
 # Limitation
-Using a free postgreSQL database from Heroku. Please refresh if unable to get data from database when calling the API.
+Using a free postgreSQL database from Heroku. Please refresh if unable to get data from database when calling the API
