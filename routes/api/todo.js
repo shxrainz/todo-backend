@@ -8,7 +8,7 @@ const queries = require('../../queries')
 router.get('/todoList', async (req, res) => {
     await pool.query(queries.getTodos, (error, results) => {
         if (error) throw error;
-        res.status(200).json(results.rows)
+        res.status(200).json({data: results.rows})
     })
 
 });

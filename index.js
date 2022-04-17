@@ -1,9 +1,11 @@
 const express =  require('express')
 const app = express();
 const logger = require('./middleware/logger')
+const cors = require('cors')
 
 //Init middleware
 app.use(logger)
+app.use(cors())
 
 //Body Parser Middleware
 app.use(express.json())
