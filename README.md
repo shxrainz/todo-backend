@@ -1,4 +1,4 @@
-# todo-backend
+# Simple Todo-App Backend
 Backend for simple-todo-app using NodeJS,Express and PostgreSQL
 
 # Install dependencies
